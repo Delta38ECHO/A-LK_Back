@@ -1,0 +1,101 @@
+#hpimgsize{
+    height: 400px;
+    width: auto;
+    
+}
+#thumbnail{
+    height: 100px;
+    width: auto;
+}
+#bigImage{
+    height: 300px;
+    width: auto;
+}
+#cartImage{
+    height: 150px;
+    width: auto;
+}
+#navlogo{
+    height:40px;
+    width: auto;
+}
+#prod_box{
+    height:200px;
+    width:auto;
+    border:5px;
+    border-color:black;
+}
+#prod_img{
+    height:180px;
+    width:auto;
+}
+#prod_description{
+    height:100px;
+    width:auto;
+}
+.login_registerbg{
+   
+    background-repeat:no-repeat;
+    background-size:cover;
+    display: flex;
+    width:100%;
+    height:100vh;
+    justify-content:center; 
+}
+.oldlogin_registerbg{
+    background-image:url('./pr2images/NLRbg.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    display: flex;
+    width:100%;
+    height:100vh;
+    justify-content:center; 
+}
+#LR_Box{
+    align-self: center;
+    border:3px solid #333;
+    padding:16px;
+    background-color:white;
+
+}
+.product_box{
+    height:350px;
+    width:500px;
+}
+.big_product_box{
+    height:400px;
+    width:1000px;
+}
+#total_box{
+    border-style:solid;
+    border-width:1px;
+    border-color:black;
+    background-color:lightgrey;
+    margin: 10px 10px 10px 10px;
+}
+#item_box{
+    border-style:solid;
+    border-width:1px;
+    border-color:grey;
+    background-color:white;
+    margin: 10px 10px 10px 10px;
+}
+#headerImg{
+    justify-content:center; 
+    height:200px;
+    width:auto;
+}
+#top-header{
+    background-color:dimgrey;
+    height:50px;
+}
+#main-header{
+    background-color:dimgrey;
+    height60px;
+}
+#white-font{
+    text-decoration-color:white;
+}
+#menu-header {
+    display:inline;
+}
