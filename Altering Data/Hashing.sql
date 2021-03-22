@@ -12,3 +12,9 @@ UPDATE Accounts SET password = MD5(password);
 SELECT * FROM Accounts;
 
 --Success, all passwords are now hashed.
+
+--Does it always hash a new password?  No...
+--Change the type of Password in Accounts to be a password hashed into MD5.
+
+--UPDATE `thistable` SET `thistable`.`column1` = `md5`
+--WHERE `thistable`.`column1` = `currentvalue` 
