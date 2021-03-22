@@ -18,3 +18,6 @@ SELECT * FROM Accounts;
 
 --UPDATE `thistable` SET `thistable`.`column1` = `md5`
 --WHERE `thistable`.`column1` = `currentvalue` 
+
+UPDATE Accounts SET password = md5(password);
+--Success!!  The SHOW FIELDS shows that password type is now varchar32 and will be hashed in md5 automatically. 
