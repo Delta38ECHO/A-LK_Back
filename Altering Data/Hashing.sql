@@ -30,3 +30,5 @@ Update Accounts set password = SHA2(password, 224);
 
 --The first SHA2 depicted all passwords to NULL. Must update the passwords ID: 1-50
 --to a new password.
+
+--See: pass_update.sql
