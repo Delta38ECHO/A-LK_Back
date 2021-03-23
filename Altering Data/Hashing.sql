@@ -32,3 +32,7 @@ Update Accounts set password = SHA2(password, 224);
 --to a new password.
 
 --See: pass_update.sql
+
+-------
+
+--Done and done.  Alterfront end to use SHA2 function upon entering data to database.
