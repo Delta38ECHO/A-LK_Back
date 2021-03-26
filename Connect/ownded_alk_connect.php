@@ -1,7 +1,7 @@
 <?php
 	//conect_to_database
-$server = 'localhost';
-$user = 'alk';
+$server = 'bender.cs.csubak.edu';
+$user = 'noay';
 $password = 'Thisisasecurepassword123!';
 $database = 'alk';
 $db = new mysqli($server, $user, $password, $database);
