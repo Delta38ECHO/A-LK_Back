@@ -3,7 +3,7 @@
 
 
 --FRONT END HAS AUTO-ID MAKER AT LEN. (20), Do we need auto-increment ID in DB?
---ID may be random otherise. Having Sahar and Pascual make a function:
+--ID may be random otherwise. Having Sahar and Pascual make a function:
 --MAKE ID //length 20
 --WHILE(ID - Exists to another ID in DB)
 --IF(ID Exists)
@@ -25,7 +25,11 @@ if (mysql_result($result, 0, 0) > 0) {
 }
 */
 
---BOOL in DB to see if car has been registerd to ALK site.
+--BOOL in DB to see if car has been registered to ALK site.
 --BOOL in DB to verify if eMAIL has been registered to ALK-SITE.
 
 ---GO over with Gustavo on DB logic.
+
+
+-------------
+--Added "Zest" data column in Users and Accounts to hold the salt values from front end.
