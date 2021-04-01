@@ -1,8 +1,8 @@
 TO DO:
 
-ALter DB to store SHA2+Salt hash passwords
+ALter DB to store SHA2+Salt hash passwords   (done)
 
-AlterDB to store theSalt value for the hashed password from Front end
+AlterDB to store theSalt value for the hashed password from Front end   (done)
 
 --This will be from Front end onto tables: Accounts and Users
 
@@ -11,4 +11,12 @@ AlterDB to store theSalt value for the hashed password from Front end
 Fix the connect .php file untiol the abaility to connect to the server + databse is fixed. (Cruz may need to allow for server to communiucate with itself.)
 
 Have DB be able to tell wether a person is registred with front end with email and their confirmation email.
+
+
+Password for account is 256 + 10 salt.
+--Set up for USER table + Acounts.
+
+Use:
+https://www.w3schools.com/sql/sql_alter.asp
+
 
