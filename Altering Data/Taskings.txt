@@ -4,3 +4,12 @@ Current issue - Databse is connected, BUT when making a new account to then push
 May need to check and put DB into a NormalForm (3NF) such that account_id in Users isn't dependent on itself from Accounts table, thus making the entering of data from front end feaseble.  
 ELSE
 Need some code wizadry to push data to two tables AT ONCE so that the data isn't ignored by db.  (Will cause deletion anomoly when user account deletion is implemented.)
+
+In short:
+
+Database may need to be in 3NF (Thrird Normal Form)
+this will allow for data to be eneterd into database without AccountID conflicts and may make data lookup seamless.
+
+Data when pushed from front end to back end, Even though DB is connected, data doesn't populate to DB. (maybe due to NF conflicts or from broken HTML buttons that Psucal found. 
+
+Confirm passwords are able to be str compared in the 
