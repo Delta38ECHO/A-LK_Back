@@ -1,0 +1,6 @@
+4/1/2021 - 1pm - [4pm] - Helped Pascual and Sahar make alterations to front end where the myraid of Syntax errors were fixed and pages were able to load and connect to back end.
+
+Current issue - Databse is connected, BUT when making a new account to then push all account data to database; No new information is appearing in mySQL db.
+May need to check and put DB into a NormalForm (3NF) such that account_id in Users isn't dependent on itself from Accounts table, thus making the entering of data from front end feaseble.  
+ELSE
+Need some code wizadry to push data to two tables AT ONCE so that the data isn't ignored by db.  (Will cause deletion anomoly when user account deletion is implemented.)
