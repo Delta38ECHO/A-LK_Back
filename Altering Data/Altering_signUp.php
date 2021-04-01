@@ -38,7 +38,7 @@
             //224 is max length of password
             $pass = hash("$sha256", $salt.$password);
             //store into database
-            $query = "insert into users (User_id, fName, lName, email, password, zest) values ('$user_id', '$firstName', '$lastName', '$email', '$pass','$salt')";
+            $query = "INSERT INTO Users (User_ID, fName, lName, email, password, zest) values ('$user_id', '$firstName', '$lastName', '$email', '$pass','$salt')";
             mysqli_query($query);
 
 	    header("Location: login.php");
