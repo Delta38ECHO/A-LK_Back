@@ -17,7 +17,8 @@ CREATE TABLE Users
   fName VARCHAR(20) NOT NULL,
   lName VARCHAR(20) NOT NULL,
   email VARCHAR(40) NOT NULL,
-  password VARCHAR(20) NOT NULL,
+  password VARCHAR(270) NOT NULL,
+  zest VARCHAR(15) NOT NULL,
   Authority INT(1),
   FOREIGN KEY (Account_ID) REFERENCES Accounts (Account_ID)
 );  
@@ -30,7 +31,8 @@ CREATE TABLE Accounts
   lName VARCHAR(20) NOT NULL,
   cName VARCHAR(20) NOT NULL,
   email VARCHAR(40) NOT NULL,
-  password VARCHAR(20) NOT NULL
+  password VARCHAR(270) NOT NULL,
+  zest VARCHAR(15) NOT NULL
 );
 
 #This creates table for logs.  #Filled LOGS

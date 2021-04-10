@@ -8,7 +8,7 @@ AlterDB to store theSalt value for the hashed password from Front end   (done)
 
 ---------
 
-Fix the connect .php file untiol the abaility to connect to the server + databse is fixed. (Cruz may need to allow for server to communiucate with itself.)   (fixed and done)
+Fix the connect .php file untiol the abaility to connect to the server + databse is fixed. (Cruz may need to allow for server to communiucate with itself.)
 
 Have DB be able to tell wether a person is registred with front end with email and their confirmation email.
 
@@ -20,13 +20,3 @@ Use:
 https://www.w3schools.com/sql/sql_alter.asp
 
 
---
-
-Still to do:
-
-Get facial recognition implemented
--train facial data
-
--ALter db to house new information
-
--Test signup page to see if it can actually push data to the DB.

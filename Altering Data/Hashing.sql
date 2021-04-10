@@ -35,4 +35,4 @@ Update Accounts set password = SHA2(password, 224);
 
 -------
 
---Done and done.  Alterfront end to use SHA2 function upon entering data to database.
+--Done and done.  Alter front end to use SHA2 function upon entering data to database.
