@@ -1,7 +1,9 @@
-# This creates the database.
+/*  OLD NEWS
+
+--This creates the database.
 CREATE DATABASE antiLockout;
 
-# This creates the table for Images.  #Filled Images
+--This creates the table for Images.  #Filled Images
 CREATE TABLE Images
 ( Image_ID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   User_ID INT UNSIGNED NOT NULL,
@@ -10,7 +12,7 @@ CREATE TABLE Images
   FOREIGN KEY (Account_ID) REFERENCES Accounts (Account_ID)
 );
 
-# This create table for Users.#FILLED USERS.
+--This create table for Users.#FILLED USERS.
 CREATE TABLE Users 
 ( User_ID INT UNSIGNED Auto_INCREMENT NOT NULL Primary KEY,
   Account_ID INT UNSIGNED NOT NULL, 
@@ -23,7 +25,7 @@ CREATE TABLE Users
   FOREIGN KEY (Account_ID) REFERENCES Accounts (Account_ID)
 );  
 
-#This create table for Accounts.   //Filled ACCOUNTS
+--This create table for Accounts.   //Filled ACCOUNTS
 CREATE TABLE Accounts 
 ( Account_ID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   Rasp_ID INT(10) NOT NULL,
@@ -35,7 +37,7 @@ CREATE TABLE Accounts
   zest VARCHAR(15) NOT NULL
 );
 
-#This creates table for logs.  #Filled LOGS
+--This creates table for logs.  #Filled LOGS
 CREATE TABLE Logs
 ( Log_ID INT(20) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   Log_TS TIMESTAMP,
@@ -46,7 +48,7 @@ CREATE TABLE Logs
   FOREIGN KEY (Car_ID) REFERENCES Cars (Car_ID),
   FOREIGN KEY (Account_ID) REFERENCES Accounts (Account_ID)
 );
-#this creates table for cars.   #FILLED CARS
+--This creates table for cars.   #FILLED CARS
 CREATE TABLE Cars
 ( Car_ID INT(20) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   CarMake VARCHAR(10) NOT NULL,
@@ -55,3 +57,5 @@ CREATE TABLE Cars
   LicencePlate VARCHAR(10) NOT NULL,
   CarImage VARCHAR(10)
 );
+
+*/
