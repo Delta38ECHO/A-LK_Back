@@ -1,5 +1,5 @@
-CREATE TABLE Cars
-( Car_ID INT(20) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE alk.Cars(
+  Car_ID INT(20) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   User_ID VARCHAR(20) NOT NULL,
   CarMake VARCHAR(10) NOT NULL,
   CarModel VARCHAR(10) NOT NULL,
@@ -9,8 +9,9 @@ CREATE TABLE Cars
   FOREIGN KEY (User_ID) REFERENCES Users (User_ID)
 );
 
-CREATE TABLE Users 
-( User_ID VARCHAR(20) NOT NULL PRIMARY KEY,
+CREATE TABLE alk.Users(
+  User_ID VARCHAR(20) NOT NULL PRIMARY KEY,
+  Co_ID INT(25) NOT NULL,
   Fname VARCHAR(20) NOT NULL,
   Lname VARCHAR(20) NOT NULL,
   Email VARCHAR(40) NOT NULL,
@@ -19,6 +20,7 @@ CREATE TABLE Users
   Authority INT(4) NOT NULL,
 );
 
+/*
 CREATE TABLE u_Access
 ( Access_ID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   Master_ID VARCHAR(20) NOT NULL,
@@ -26,14 +28,15 @@ CREATE TABLE u_Access
   Slave_ID VARCHAR(20) NOT NULL,
   Acc_op INT(1) NOT NULL,
   --FOREIGN KEY (User_ID) REFERENCES Users (User_ID)
-  /*
+
   So this needs a revamp;  The table will be rebuilt to be co-cat. with Users table.
   Master uses primary User_ID to then ALLOW Slave to use Vehicle "Mas_Car_ID" owned by Master.
-  */
 );
 
 --Table: u_Access won't be used, use the new one below:
-CREATE TABLE u_Access.Users(
+*/
+
+CREATE TABLE alk.a_Access(
 	Access_ID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	Master_ID VARCHAR(20) NOT NULL,
 	Mas_Car_ID INT(20) UNSIGNED NOT NULL,
@@ -42,13 +45,19 @@ CREATE TABLE u_Access.Users(
 	INDEX 'Master_ID_key_idx' ('Master_ID' ASC),
 	INDEX 'Mas_Car_ID_key_idx' ('Mas_Car_ID' ASC),
 	INDEX 'Slave_ID_key_idx' ('Slave_ID' ASC),
-	CONSTRAINT '' FOREIGN KEY ('') REFERENCES ``.`` (``) ON DELETE NO ACTION ON UPDATE NO ACTION,
-	CONSTRAINT '' FOREIGN KEY ('') REFERENCES ``.`` (``) ON DELETE NO ACTION ON UPDATE NO ACTION,
-	CONSTRAINT '' FOREIGN KEY ('') REFERENCES ``.`` (``) ON DELETE NO ACTION ON UPDATE NO ACTION,
+	CONSTRAINT 'Master_ID_key' FOREIGN KEY ('Master_ID') REFERENCES `alk`.`Users` (`Co_ID`)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION,
+	CONSTRAINT 'Mas_Car_ID_key' FOREIGN KEY ('Mas_Car_ID') REFERENCES `alk`.`Cars` (`Car_ID`)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION,
+	CONSTRAINT 'Slave_ID_key' FOREIGN KEY ('Slave_ID') REFERENCES `alk`.`Users` (`User_ID`)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION,
 );
 
-CREATE TABLE Logs
-( Log_ID INT(20) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE alk.Logs( 
+  Log_ID INT(20) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   Log_TS TIMESTAMP,
   User_ID VARCHAR(20) NOT NULL,
   Car_ID INT UNSIGNED NOT NULL,
@@ -63,30 +72,31 @@ CREATE TABLE Logs
 	This is then stored in a linked table known as u_Access where it stores the User_ID. There's a MASTER_ID Where the car owner/account owner is listed and then there's the SLAVE_ID Where Master allows slave to use vehicle owned by master. 
 	
 	Example:
-	CREATE TABLE `test`.`user` (
-	`iduser` INT NOT NULL,
-	`username` VARCHAR(45) NULL,
-	PRIMARY KEY (`iduser`));
-
-
-CREATE TABLE `test`.`transfer` (
-  `transactionID` INT NOT NULL,
-  `from_user` INT NULL,
-  `to_user` INT NULL,
-  `transfer_amount` FLOAT NULL,
-  PRIMARY KEY (`transactionID`),
-  INDEX `from_user_key_idx` (`from_user` ASC),
-  INDEX `to_user_key_idx` (`to_user` ASC),
-  CONSTRAINT `from_user_key`
-    FOREIGN KEY (`from_user`)
-    REFERENCES `test`.`user` (`iduser`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `to_user_key`
-    FOREIGN KEY (`to_user`)
-    REFERENCES `test`.`user` (`iduser`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
 	
+CREATE TABLE `test`.`user` 
+(	`iduser` INT NOT NULL,
+	`username` VARCHAR(45) NULL,
+	PRIMARY KEY (`iduser`)
+);
 
+
+CREATE TABLE `test`.`transfer` 
+(	`transactionID` INT NOT NULL,
+	`from_user` INT NULL,
+	`to_user` INT NULL,
+	`transfer_amount` FLOAT NULL,
+	PRIMARY KEY (`transactionID`),
+	INDEX `from_user_key_idx` (`from_user` ASC),
+	INDEX `to_user_key_idx` (`to_user` ASC),
+	CONSTRAINT `from_user_key`
+	FOREIGN KEY (`from_user`)
+	REFERENCES `test`.`user` (`iduser`)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION,
+	CONSTRAINT `to_user_key`
+	FOREIGN KEY (`to_user`)
+	REFERENCES `test`.`user` (`iduser`)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION
+);
 */
