@@ -1,3 +1,6 @@
+--Adds data to table Cars.
+
+
 insert into Cars (Car_ID, User_ID, CarMake, CarModel, CarYear, LicencePlate) values (1, 1, 'BMW', '3 Series', 1998, '1HGCP2E38CA968306');
 insert into Cars (Car_ID, User_ID, CarMake, CarModel, CarYear, LicencePlate) values (4, 3, 'Volvo', 'S80', 2006, 'JTHBE1KS6B0046173');
 insert into Cars (Car_ID, User_ID, CarMake, CarModel, CarYear, LicencePlate) values (7, 5, 'Cadillac', 'DTS', 2009, 'WAULT58E54A087117');

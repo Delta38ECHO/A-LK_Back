@@ -1,3 +1,5 @@
+--Adds information to table Users
+
 insert into Users (User_ID, Fname, Lname, Email, Password, Zest) values (1, 'Sigfried', 'Staples', 'sstaples0@nps.gov', '898ef36d7b750e7b99af28ae76675b237e68bab5bf5a6e611964bceaecb65933', '9181841256');
 insert into Users (User_ID, Fname, Lname, Email, Password, Zest) values (3, 'Hilda', 'Mahedy', 'hmahedy1@mashable.com', '2069735ed6b5b502f1d30e6a0fbf301f75c901a8b741f48314f2f89509f9b5d8', '5866533111');
 insert into Users (User_ID, Fname, Lname, Email, Password, Zest) values (5, 'Miran', 'Lindop', 'mlindop2@google.nl', '7055681d650654e106d3a192740f7263fd4765af3683241c869656b6c6c0067d', '2147975826');

@@ -1,3 +1,6 @@
+--Adds data to table uAccess.
+
+
 insert into u_Access (Access_ID, Master_ID, Slave_ID, Mas_Car_ID, Acc_op, Authority) values (1, 1, 51, 1, 0, 3);
 insert into u_Access (Access_ID, Master_ID, Slave_ID, Mas_Car_ID, Acc_op, Authority) values (2, 3, 53, 4, 0, 4);
 insert into u_Access (Access_ID, Master_ID, Slave_ID, Mas_Car_ID, Acc_op, Authority) values (3, 5, 55, 7, 1, 0);
