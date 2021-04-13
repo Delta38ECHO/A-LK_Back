@@ -18,7 +18,7 @@ CREATE TABLE Users(
   Zest VARCHAR(15) NOT NULL
 )
 Engine=MyISAM;
-
+--Id goes 1,3,5,7,9 ... +3 to prev.
 /*
 CREATE TABLE u_Access
 ( Access_ID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
