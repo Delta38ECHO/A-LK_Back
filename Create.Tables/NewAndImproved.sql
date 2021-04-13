@@ -1,3 +1,6 @@
+/*
+File is now obsolete and will only be an old reference.
+
 CREATE TABLE Cars
 ( Car_ID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   Co_ID INT(25) NOT NULL,
@@ -37,3 +40,4 @@ CREATE TABLE Logs
   FOREIGN KEY (User_ID) REFERENCES Users (User_ID),
   FOREIGN KEY (Car_ID) REFERENCES Cars (Car_ID)
 );
+*/

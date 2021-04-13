@@ -1,4 +1,4 @@
-CREATE TABLE alk.Cars(
+CREATE TABLE Cars(
   Car_ID INT(20) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   User_ID VARCHAR(20) NOT NULL,
   CarMake VARCHAR(10) NOT NULL,
@@ -9,16 +9,16 @@ CREATE TABLE alk.Cars(
   FOREIGN KEY (User_ID) REFERENCES Users (User_ID)
 );
 
-CREATE TABLE alk.Users(
+CREATE TABLE Users(
   User_ID VARCHAR(20) NOT NULL PRIMARY KEY,
-  Co_ID INT(25) NOT NULL,
   Fname VARCHAR(20) NOT NULL,
   Lname VARCHAR(20) NOT NULL,
   Email VARCHAR(40) NOT NULL,
   Password VARCHAR(270) NOT NULL,
   Zest VARCHAR(15) NOT NULL,
-  Authority INT(4) NOT NULL,
-);
+  Authority INT(4) NOT NULL
+)
+Engine=MyISAM;
 
 /*
 CREATE TABLE u_Access
@@ -36,6 +36,8 @@ CREATE TABLE u_Access
 --Table: u_Access won't be used, use the new one below:
 */
 
+--Doesn't work, try again.
+/*
 CREATE TABLE alk.a_Access(
 	Access_ID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	Master_ID VARCHAR(20) NOT NULL,
@@ -54,49 +56,44 @@ CREATE TABLE alk.a_Access(
 	CONSTRAINT 'Slave_ID_key' FOREIGN KEY ('Slave_ID') REFERENCES `alk`.`Users` (`User_ID`)
 	ON DELETE NO ACTION
 	ON UPDATE NO ACTION,
-);
+);  */
 
-CREATE TABLE alk.Logs( 
+--Use this one:
+
+CREATE TABLE u_Access
+( Access_ID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  Master_ID INT UNSIGNED NOT NULL,
+  Slave_ID INT UNSIGNED NOT NULL,
+  Mas_Car_ID INT UNSIGNED NOT NULL,
+  Acc_op INT(1) NOT NULL,
+  FOREIGN KEY (Master_ID) REFERENCES Users (User_ID),
+  FOREIGN KEY (Slave_ID) REFERENCES Users (User_ID),
+  FOREIGN KEY (Mas_Car_ID) REFERENCES Cars (Car_ID)
+)Engine=MyISAM;
+
+CREATE TABLE Logs( 
   Log_ID INT(20) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   Log_TS TIMESTAMP,
   User_ID VARCHAR(20) NOT NULL,
   Car_ID INT UNSIGNED NOT NULL,
   FOREIGN KEY (User_ID) REFERENCES Users (User_ID),
   FOREIGN KEY (Car_ID) REFERENCES Cars (Car_ID)
-);
+)Engine=MyISAM;
 
 /*
 
-	For the working parts of the DB, the Co_ID NEEDS to be the grouping aspect of u_Access table. A user is created with their own Co_ID that then gives them the ability to link other users via their User_ID in table Users.
-	
-	This is then stored in a linked table known as u_Access where it stores the User_ID. There's a MASTER_ID Where the car owner/account owner is listed and then there's the SLAVE_ID Where Master allows slave to use vehicle owned by master. 
-	
-	Example:
-	
-CREATE TABLE `test`.`user` 
-(	`iduser` INT NOT NULL,
-	`username` VARCHAR(45) NULL,
-	PRIMARY KEY (`iduser`)
-);
-
-
-CREATE TABLE `test`.`transfer` 
-(	`transactionID` INT NOT NULL,
-	`from_user` INT NULL,
-	`to_user` INT NULL,
-	`transfer_amount` FLOAT NULL,
-	PRIMARY KEY (`transactionID`),
-	INDEX `from_user_key_idx` (`from_user` ASC),
-	INDEX `to_user_key_idx` (`to_user` ASC),
-	CONSTRAINT `from_user_key`
-	FOREIGN KEY (`from_user`)
-	REFERENCES `test`.`user` (`iduser`)
-	ON DELETE NO ACTION
-	ON UPDATE NO ACTION,
-	CONSTRAINT `to_user_key`
-	FOREIGN KEY (`to_user`)
-	REFERENCES `test`.`user` (`iduser`)
-	ON DELETE NO ACTION
-	ON UPDATE NO ACTION
-);
+	For the working parts of the DB:
+		.User is the leading table. When a new account is made, it is stored in the User table.
+		.When the User wants to allow another user to have access to their vehicle, the user uses the front end to 
+			allow another user access:
+		.The above is ref. via the DB by the following:
+			u_Access works by having a listing_ID DENOTED BY THE Access_ID
+				.Access_ID works for one scenario only and multiple access users will need to have
+					multiple Access_ID volumes using the same Master_ID.
+				.u_Access incorporates the CAR the Master wants to allow to be used. This is done via the Car_ID 
+					denoted by the Mas_Car_ID attribute. 
+		
+		.When a user wants to make an account with 2+ cars, there will be 2 rows in table Cars with different Car_IDs and 1 repeating User_ID associated with those cars.
+		
+		.Logs is simple. So long as a user has access to a car, their associated User_ID will be listed in the User_ID attribute along with the accessed car via Car_ID; 
 */
