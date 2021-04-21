@@ -16,8 +16,7 @@ CREATE TABLE Users(
   Email VARCHAR(40) NOT NULL,
   Password VARCHAR(270) NOT NULL,
   Zest VARCHAR(15) NOT NULL
-)
-Engine=MyISAM;
+)Engine=MyISAM;
 --Id goes 1,3,5,7,9 ... +3 to prev.
 /*
 CREATE TABLE u_Access
