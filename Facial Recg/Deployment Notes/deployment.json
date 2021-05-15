@@ -1,0 +1,82 @@
+{
+  "id": "/subscriptions/5793b7cd-4c22-4f3c-92c6-8e7b56253480/resourceGroups/ALK/providers/Microsoft.Resources/deployments/Microsoft.CognitiveServicesFace-20210514133055",
+  "name": "Microsoft.CognitiveServicesFace-20210514133055",
+  "type": "Microsoft.Resources/deployments",
+  "tags": {
+    "marketplaceItemId": "Microsoft.CognitiveServicesFace"
+  },
+  "properties": {
+    "templateHash": "5659451509911783079",
+    "parameters": {
+      "name": {
+        "type": "String",
+        "value": "ALK"
+      },
+      "location": {
+        "type": "String",
+        "value": "eastus"
+      },
+      "sku": {
+        "type": "String",
+        "value": "F0"
+      },
+      "tagValues": {
+        "type": "Object",
+        "value": {}
+      },
+      "virtualNetworkType": {
+        "type": "String",
+        "value": "None"
+      },
+      "vnet": {
+        "type": "Object",
+        "value": {}
+      },
+      "ipRules": {
+        "type": "Array",
+        "value": []
+      }
+    },
+    "mode": "Incremental",
+    "debugSetting": {
+      "detailLevel": "None"
+    },
+    "provisioningState": "Succeeded",
+    "timestamp": "2021-05-14T20:35:07.3457459Z",
+    "duration": "PT25.0308062S",
+    "correlationId": "f8271e66-85dd-44a8-a8e2-58c591c2241e",
+    "providers": [
+      {
+        "namespace": "Microsoft.CognitiveServices",
+        "resourceTypes": [
+          {
+            "resourceType": "accounts",
+            "locations": [
+              "eastus"
+            ]
+          }
+        ]
+      }
+    ],
+    "dependencies": [
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/5793b7cd-4c22-4f3c-92c6-8e7b56253480/resourceGroups/ALK/providers/Microsoft.Network/virtualNetworks/faceCSDefaultVNet9901",
+            "resourceType": "Microsoft.Network/virtualNetworks",
+            "resourceName": "faceCSDefaultVNet9901"
+          }
+        ],
+        "id": "/subscriptions/5793b7cd-4c22-4f3c-92c6-8e7b56253480/resourceGroups/ALK/providers/Microsoft.CognitiveServices/accounts/ALK",
+        "resourceType": "Microsoft.CognitiveServices/accounts",
+        "resourceName": "ALK"
+      }
+    ],
+    "outputResources": [
+      {
+        "id": "/subscriptions/5793b7cd-4c22-4f3c-92c6-8e7b56253480/resourceGroups/ALK/providers/Microsoft.CognitiveServices/accounts/ALK"
+      }
+    ],
+    "validationLevel": "Template"
+  }
+}
