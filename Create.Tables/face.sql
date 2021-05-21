@@ -1,0 +1,8 @@
+--Create a table for facial images--
+CREATE TABLE Face(
+	List_ID INT(20) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	Who VARCHAR(20) NOT NULL,
+	Face VARCHAR(20) NOT NULL,
+	ImgDate DATE NOT NULL,
+	FOREIGN KEY (Who) REFERENCES Users (User_ID)
+)Engine=MyISAM;

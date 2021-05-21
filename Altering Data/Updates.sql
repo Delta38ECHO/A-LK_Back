@@ -33,3 +33,11 @@ if (mysql_result($result, 0, 0) > 0) {
 
 -------------
 --Added "Zest" data column in Users and Accounts to hold the salt values from front end.
+
+--04/09/2021 -> The DB was revamped and should del the update the delete anomolies.  The new tables are stored in the NewAndImproved.sql file
+/*Now:
+	.Alter Tables to house the new DB.
+	.Work with Pascual and Gusatvo to alter the PHP scripts to query, CORRECTLY, the backend DB.
+	.ALter PHP to submit the needed data to DB to avoid a page crash or PHP faults (pages not loading.
+	
+*/

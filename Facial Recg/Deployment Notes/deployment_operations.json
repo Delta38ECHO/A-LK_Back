@@ -1,0 +1,32 @@
+[
+  {
+    "id": "/subscriptions/5793b7cd-4c22-4f3c-92c6-8e7b56253480/resourceGroups/ALK/providers/Microsoft.Resources/deployments/Microsoft.CognitiveServicesFace-20210514133055/operations/82892D369C2B9705",
+    "operationId": "82892D369C2B9705",
+    "properties": {
+      "provisioningOperation": "Create",
+      "provisioningState": "Succeeded",
+      "timestamp": "2021-05-14T20:35:07.1679491Z",
+      "duration": "PT23.328697S",
+      "trackingId": "4c40ec4c-3fd1-4264-90c7-be45d093382a",
+      "serviceRequestId": "21c6179f-129b-4742-ad86-1dbfe681487f",
+      "statusCode": "OK",
+      "targetResource": {
+        "id": "/subscriptions/5793b7cd-4c22-4f3c-92c6-8e7b56253480/resourceGroups/ALK/providers/Microsoft.CognitiveServices/accounts/ALK",
+        "resourceType": "Microsoft.CognitiveServices/accounts",
+        "resourceName": "ALK"
+      }
+    }
+  },
+  {
+    "id": "/subscriptions/5793b7cd-4c22-4f3c-92c6-8e7b56253480/resourceGroups/ALK/providers/Microsoft.Resources/deployments/Microsoft.CognitiveServicesFace-20210514133055/operations/08585805824031627123",
+    "operationId": "08585805824031627123",
+    "properties": {
+      "provisioningOperation": "EvaluateDeploymentOutput",
+      "provisioningState": "Succeeded",
+      "timestamp": "2021-05-14T20:35:07.3120351Z",
+      "duration": "PT23.472783S",
+      "trackingId": "c0b3ebb9-464a-457b-8b5e-05c42daab839",
+      "statusCode": "OK"
+    }
+  }
+]
